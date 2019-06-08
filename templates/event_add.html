@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+    <style>
+    form {
+        width: 500px;
+        margin: auto;
+    }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <form action="/new" method="post">
+        <table>
+            <tbody>
+                <tr>
+                    <td>Тип события</td>
+                    <td>Дата регистрации</td>
+                    <td>Комментарий</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="type" id="type">
+                            {% for etype in event_types %}
+                                <option value="{{ etype.value }}">{{ etype.value }}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                    <td><input name="date_register" type="datetime-local"/></td>
+                    <td><input name="comment" type="text"/></td>
+                    <td><button type="submit">Отправить</button></td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </form>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+<style>
+    .event_table {
+        {#margin-top: 30px;#}
+        width: 100%;
+    }
+
+</style>
+{% endblock %}
+
+{% block content %}
+
+    <table class="event_table">
+        <thead>
+            <th>Отправитель</th>
+            <th>Тип</th>
+            <th>Дата отправки</th>
+            <th>Дата регистрации</th>
+            <th>Комментарий</th>
+        </thead>
+        <tbody>
+            {% for event in events %}
+            <tr>
+                <td>{{ event.sender }}</td>
+                <td>{{ event.type }}</td>
+                <td>{{ event.date_send }}</td>
+                <td>{{ event.date_register }}</td>
+                <td>{{ event.comment or '' }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

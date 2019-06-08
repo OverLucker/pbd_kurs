@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block styles %}
+    {% endblock %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .top_bar {
+            width: 100%;
+            height: 30px;
+            line-height: 25px;
+            vertical-align: middle;
+        }
+
+        .top_bar_element {
+            margin: auto 20px auto auto;
+        }
+    </style>
+</head>
+<body>
+{% block topbar %}
+    <div class="top_bar">
+        <a href="/">Главная</a>
+        <a href="/new" class="">Добавить событие</a>
+        <a href="/report">Посмотреть отчет</a>
+        <a class="top_bar_element" href="/logout">Выйти</a>
+    </div>
+{% endblock %}
+{% block content %}
+{% endblock %}
+</body>
+</html>
